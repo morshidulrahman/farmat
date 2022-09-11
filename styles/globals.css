@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  font-family: 'Mulish', sans-serif;
+  margin:0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+/* container */
+
+@layer components{
+  .container{
+    @apply max-w-screen-2xl mx-auto px-5
+  }
+  h1,h2,h3,h4,h5,h6{
+    @apply text-title
+  }
+
+  /* scrollbar */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* card shadow */
+  .card-shadow{
+    box-shadow: 0 30px 40px 0 rgb(131 132 135 / 15%);
+    -webkit-box-shadow: 0 30px 40px 0 rgb(131 132 135 / 15%);
+  }
+}
+
+ 
+
