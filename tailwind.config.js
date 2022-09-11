@@ -10,7 +10,9 @@ module.exports = {
         primary: "#FAB528",
         color: "#999999",
         title: "#222222",
-        footercolor: "#555"
+        footercolor: "#555",
+        orange: "#FA582C",
+        grenn: "#669900"
       }
     },
   },
