@@ -3,6 +3,7 @@ import Homecategory from '../app/components/Home/Homecategory'
 import Homehero from '../app/components/Home/Homehero'
 import FeatureBrands from '../app/components/Home/FeatureBrands'
 import TodaysDeal from '../app/components/Home/TodaysDeal'
+import Homeposter from '../app/components/Home/Homeposter'
 function index() {
   return (
     <>
@@ -10,6 +11,7 @@ function index() {
       <Homecategory />
       <FeatureBrands />
       <TodaysDeal />
+      <Homeposter />
     </>
   )
 }

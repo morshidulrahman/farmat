@@ -12,7 +12,7 @@ module.exports = {
         title: "#222222",
         footercolor: "#555",
         orange: "#FA582C",
-        grenn: "#669900"
+        green: "#669900"
       }
     },
   },

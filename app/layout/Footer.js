@@ -16,7 +16,7 @@ function Footer() {
                     <Footercard image='/icons/f (5).svg' title="Daily Offers" desc="Discount up to 70% OFF" />
                 </div>
                 {/* footer widget */}
-                <div className='flex justify-between text-footercolor mt-10 flex-wrap gap-8 mb-16'>
+                <div className='flex justify-between text-footercolor mt-10 flex-wrap gap-4 mb-16'>
                     <div className='max-w-sm'>
                         <h2 className='font-bold mb-5 text-xl'>Farmart – Your Online Foods & Grocery</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi porro voluptatum recusandae adipisci unde possimus aspernatur accusamus enim non molestiae magni animi, quam debitis iure, quas commodi incidunt accusantium nostrum.</p>
