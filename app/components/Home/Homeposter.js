@@ -18,7 +18,7 @@ function Homeposter() {
                                 <span className="text-orange text-3xl font-bold">$14,5</span>
                                 <span className='line-through font-bold mt-3'>$39.6</span>
                             </div>
-                            <h2 className="md:text-2xl sm:text-lg text-base font-extrabold text-title mt-4">Meat pork <br />CANNED</h2>
+                            <h2 className="md:text-xl sm:text-lg text-base font-extrabold text-black mt-4 uppercase">Meat pork <br />CANNED</h2>
                             <span className="text-gray-500 text-lg font-semibold md:mt-8 mt-6">250g</span>
                         </div>
                     </div>

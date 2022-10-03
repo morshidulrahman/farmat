@@ -49,7 +49,7 @@ function Homecategory() {
             <div className='container'>
                 <SectionHeading title="Browse by Category" text="All Categories" />
                 {/* category items */}
-                <div className='flex items-center gap-5 mt-10 overflow-x-auto pb-5 no-scrollbar'>
+                <div className='flex items-center gap-5 mt-10 overflow-x-auto no-scrollbar pb-5 w-full'>
                     {
                         CATEGORY.map((item, index) => (
                             <Categorycard {...item} key={index} />
