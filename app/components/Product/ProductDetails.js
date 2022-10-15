@@ -1,3 +1,4 @@
+import Breadcrumb from "../shared/Breadcrumb"
 import FooterCard from "../shared/footercard"
 import Quantity from "../shared/Quantity"
 
@@ -12,13 +13,7 @@ const ProductDetails = ({ price = 30.25, oldPrice }) => {
                         </div>
                         <div className="lg:w-[37%] w-full lg:px-10 pl-0">
                             <div className="text-color mb-5">
-                                <a href="/">Home</a>
-                                <span className="mx-2">/</span>
-                                <a href="/">Shop</a>
-                                <span className="mx-2">/</span>
-                                <a href="/">Fruits</a>
-                                <span className="mx-2">/</span>
-                                <span className="text-title">Bar S - Classic Bun Length Franks</span>
+                                <Breadcrumb />
                             </div>
                             <h4 className="md:text-xl text-base font-bold mb-2 text-orange">MartFury</h4>
                             <h1 className="text-title md:text-3xl text-xl font-semibold mb-5">Bar S - Classic Bun Length Franks</h1>

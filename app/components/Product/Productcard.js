@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from "next/image"
+import Link from 'next/link'
 function ProductCard({ product }) {
     const { name, image, price, weight, oldPrice } = product
 
@@ -9,6 +10,7 @@ function ProductCard({ product }) {
         return Math.round(off)
     }
     return (
+
         <div className="product-card ml-4">
             {
                 oldPrice && (
@@ -36,6 +38,7 @@ function ProductCard({ product }) {
                 </div>
             </div>
         </div>
+
     )
 }
 
