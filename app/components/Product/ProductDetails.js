@@ -1,4 +1,5 @@
 import FooterCard from "../shared/footercard"
+import Quantity from "../shared/Quantity"
 
 const ProductDetails = ({ price = 30.25, oldPrice }) => {
     return (
@@ -38,15 +39,7 @@ const ProductDetails = ({ price = 30.25, oldPrice }) => {
                             <div className="my-5">
                                 <span className="text-sm pb-2 block text-color">Quantity:</span>
                                 <div className="flex gap-3">
-                                    <div className="flex border">
-                                        <button className="w-10 bg-[#F5F5F5] flex items-center justify-center">
-                                            -
-                                        </button>
-                                        <div className="w-10 flex items-center justify-center">1</div>
-                                        <button className="w-10 bg-[#F5F5F5] flex items-center justify-center">
-                                            +
-                                        </button>
-                                    </div>
+                                    <Quantity />
                                     <button className="btn-white bg-primary px-5 py-2 rounded">Add to cart</button>
                                 </div>
                             </div>

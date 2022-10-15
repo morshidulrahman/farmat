@@ -4,7 +4,7 @@ function Homeposter() {
     return (
         <section className='py-8'>
             <div className='container'>
-                <div className='flex flex-wrap justify-between'>
+                <div className='flex flex-wrap justify-between gap-4'>
                     <div className='w-full md:w-[32%] px-10 py-10 md:px-12 md:py-14 rounded-lg' style={setBackgroundImage('https://demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2021/05/homepage-new-banner-2.png', { backgroundPosition: 'center center', backgroundColor: '#FAC250', backgroundSize: 'cover' })}>
                         <div className='flex flex-col justify-between'>
                             <h2 className="md:text-4xl sm:text-2xl text-xl font-bold text-title">Mango Juice<br />Bottle</h2>

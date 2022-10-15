@@ -85,7 +85,7 @@ function Footer() {
             </div>
             {/* footer down */}
             <div className='border-t'>
-                <div className='flex justify-between gap-8 items-center container mt-6 text-footercolor'>
+                <div className='flex justify-between gap-6 md:gap-8 items-center container mt-6 text-footercolor flex-wrap'>
                     <p>&copy; 2022 <span className='font-bold'>Farmart</span> All rights reserved </p>
                     <img src="/images/footer-new-payment.png" alt="footer" />
                     <div className='flex items-center max-w-md '>

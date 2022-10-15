@@ -9,7 +9,7 @@ function EssentialProduct() {
                     categories={["All", "Grocery", "Fruits", "Vegetables", "Meat", "Fish"]} />
 
                 {/* product */}
-                <div className="w-full flex gap-5 overflow-x-auto mt-5 pt-5 pb-14 no-scrollbar">
+                <div className="w-full flex gap-5 overflow-x-auto mt-5 pt-5  no-scrollbar">
                     {
                         ESSENTIAL.map((product, index) => (
                             <ProductCard product={product} key={index} />

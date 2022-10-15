@@ -2,7 +2,13 @@ import React from 'react'
 
 function Cart() {
     return (
-        <div>Cart</div>
+        <main>
+            <div className='bg-[#f5f5f5] p-5'>
+                <div className='mx-auto max-w-4xl'>
+                    Cart
+                </div>
+            </div>
+        </main>
     )
 }
 
