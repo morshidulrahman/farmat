@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../shared/Button'
 // import { FormBtn } from '../shared/Form'
 
-const YourOrder = ({ placeOrder }) => {
-
+const YourOrder = () => {
+    const [loading, setloading] = useState(false)
+    const placeOrder = () => {
+        setloading(true)
+        setTimeout(() => {
+            setloading(false)
+        }, [2000])
+    }
     return (
         <div>
             <h3 className="text-2xl mb-4">Your order</h3>
@@ -48,6 +54,7 @@ const YourOrder = ({ placeOrder }) => {
             <Button
                 title="Place Order"
                 onClick={placeOrder}
+                loading={loading}
                 className="w-full p-4"
             />
         </div>

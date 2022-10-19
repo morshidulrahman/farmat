@@ -1,8 +1,10 @@
 import React from 'react'
-
-const Button = ({ className, title, ...rest }) => {
+import { Loader } from '@mantine/core';
+const Button = ({ className, title, loading, ...rest }) => {
     return (
-        <button className={`bg-primary font-bold px-6 rounded ${className}`} {...rest}>{title}</button>
+        <button className={`bg-primary font-bold px-6 rounded ${className}`} {...rest}>
+            {loading ? (<Loader size="sm" className='mx-auto' color={'gray'} />) : title}
+        </button>
     )
 }
 
