@@ -19,7 +19,6 @@ function Cart() {
                 </div>
                 <CartAction />
             </div>
-
         </main>
     )
 }
