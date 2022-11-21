@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { AppForm, FormInput, FormBtn } from "../shared/from"
 import * as Yup from "yup"
+import firebase from "firebase"
+import { auth } from '../../configs/firebase'
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().email().required().label("email address"),
@@ -13,6 +15,10 @@ const index = () => {
 
     const handlesubmit = (values) => {
         console.log(values)
+    }
+    const loginWithGoogle = () => {
+        const provider = new firebase.auth.GoogleAuthProvider()
+        auth.signInWithPopup(provider)
     }
     return (
         <div className="mt-10">
@@ -51,7 +57,7 @@ const index = () => {
                     <div className='pb-10'>
                         <p className="text-center mt-5">Or</p>
                         <div className="flex items-center justify-center gap-5 mt-5">
-                            <button className="bg-[#DB4437] text-white px-5 py-2 rounded-md">Google</button>
+                            <button onClick={loginWithGoogle} className="bg-[#DB4437] text-white px-5 py-2 rounded-md">Google</button>
                             <button className="bg-[#4267B2] text-white px-5 py-2 rounded-md">Facebook</button>
                         </div>
                     </div>

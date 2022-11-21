@@ -4,7 +4,7 @@ import Header from './Header'
 import { auth } from '../configs/firebase'
 import { updateUser } from '../redux/slices/authSlice'
 import { useDispatch } from 'react-redux'
-
+import { removeUesr } from '../redux/slices/authSlice'
 function Layout({ children }) {
     const dispatch = useDispatch()
     useEffect(() => {
@@ -15,6 +15,8 @@ function Layout({ children }) {
                     name: user.displayName,
                     photoURL: user.photoURL
                 }))
+            } else {
+                dispatch(removeUesr())
             }
         })
         return unsubscribe

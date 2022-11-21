@@ -2,9 +2,11 @@ import React from 'react'
 import Breadcrumb from '../components/shared/Breadcrumb'
 import Auth from '../components/Auth'
 import Dashboardwraper from '../components/dashboard/dashboardwraper'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../redux/slices/authSlice'
 
 const Dashboarlayout = ({ children }) => {
-    const user = {}
+    const user = useSelector(selectUser)
     return (
         <main>
             <div className='bg-[#f5f5f5] p-5'>
