@@ -14,12 +14,30 @@ const index = () => {
     const [isLogin, setIsLogin] = useState(true)
 
     const handlesubmit = (values) => {
-        console.log(values)
+        if (isLogin) login(values.email, values.password)
+        else singUp(values.email, values.password)
     }
     const loginWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
     }
+
+    const singUp = (email, password) => {
+        auth.createUserWithEmailAndPassword(email, password)
+            .catch((error) => {
+                alert(error.message)
+                console.log(error.message)
+            })
+    }
+
+    const login = (email, password) => {
+        auth.signInWithEmailAndPassword(email, password)
+            .catch((error) => {
+                alert(error.message)
+                console.log(error.message)
+            })
+    }
+
     return (
         <div className="mt-10">
             <div className='mx-auto max-w-[400px]  bg-gray-200 rounded-sm'>

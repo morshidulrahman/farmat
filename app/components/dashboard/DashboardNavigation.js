@@ -28,7 +28,8 @@ const DashboardNavigation = () => {
                     </>
                 );
             })}
-            <button className='py-1 px-10' onClick={() => auth.signOut()}>Logout</button>
+            <button className=' px-10 cursor-pointer bg-yellow-500 bg-opacity-80 py-2 rounded-md font-semibold'
+                onClick={() => auth.signOut()}>Logout</button>
         </div>
     )
 }
