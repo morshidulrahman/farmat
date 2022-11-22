@@ -185,7 +185,7 @@ export const DEALS = [
 
 export const ESSENTIAL = [
     {
-        id: 1,
+        id: 20,
         vendor: "MartFury",
         name: "Sesame Seed Bread",
         weight: "500g",
@@ -195,7 +195,7 @@ export const ESSENTIAL = [
             "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2019/12/03_3a.jpg?resize=300%2C300&ssl=1",
     },
     {
-        id: 2,
+        id: 21,
         vendor: "MartFury",
         name: "Morrisons The Best Beef",
         weight: "200g",
@@ -205,7 +205,7 @@ export const ESSENTIAL = [
             "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2019/12/01_18a.jpg?resize=300%2C300&ssl=1",
     },
     {
-        id: 3,
+        id: 22,
         vendor: "Farmart",
         name: "Avocado, Hass Large",
         weight: "500g",
@@ -216,7 +216,7 @@ export const ESSENTIAL = [
             "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/01_16a.jpg?resize=300%2C300&ssl=1",
     },
     {
-        id: 4,
+        id: 23,
         vendor: "Farmart",
         name: "Italia Beef Lasagne",
         weight: "500g",
@@ -226,7 +226,7 @@ export const ESSENTIAL = [
             "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/05_4a.jpg?resize=300%2C300&ssl=1",
     },
     {
-        id: 5,
+        id: 24,
         vendor: "MartFury",
         name: "Maxwell House Classic Roast ...",
         weight: "1.5kg",
@@ -236,7 +236,7 @@ export const ESSENTIAL = [
             "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/06_3a.jpg?resize=300%2C300&ssl=1",
     },
     {
-        id: 6,
+        id: 25,
         vendor: "MartFury",
         name: "Soft Mochi & Galeto Ice...",
         weight: "200g",
@@ -247,7 +247,7 @@ export const ESSENTIAL = [
             "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_4a.jpg?resize=300%2C300&ssl=1",
     },
     {
-        id: 7,
+        id: 26,
         vendor: "MartFury",
         name: "Bottled Pure Water 500ml",
         weight: "500g",
@@ -257,6 +257,7 @@ export const ESSENTIAL = [
             "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/06_7a.jpg?resize=300%2C300&ssl=1",
     },
 ];
+
 
 export const HEALTHY = [
     {

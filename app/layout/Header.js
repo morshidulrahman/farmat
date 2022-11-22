@@ -4,7 +4,11 @@ import logo from '../../public/logo.svg'
 import Link from 'next/link'
 import Search from '../components/search';
 import { AiOutlineUser, AiOutlineShoppingCart } from 'react-icons/ai';
+import { selectTotalCartItems } from '../redux/slices/basketSlice';
+import { useSelector } from 'react-redux';
+
 function Header() {
+    const cartItems = useSelector(selectTotalCartItems)
     return (
         <header className='py-7 border-b bg-white'>
             {/* header top area */}
@@ -40,7 +44,7 @@ function Header() {
                             className="flex gap-3">
                             <div className='relative'>
                                 <AiOutlineShoppingCart className='text-3xl' />
-                                <span className='bg-primary px-[4px]  rounded-sm -top-1 right-0 absolute text-xs'>0</span>
+                                <span className='bg-primary px-[4px]  rounded-sm -top-1 right-0 absolute text-xs'>{cartItems || 0}</span>
                             </div>
                             <div className='flex-col text-xs text-color hidden lg:flex'>
                                 your Cart
