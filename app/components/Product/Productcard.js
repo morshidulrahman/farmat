@@ -1,14 +1,28 @@
 import React from 'react'
 import Image from "next/image"
 import Link from 'next/link'
-function ProductCard({ product }) {
-    const { name, image, price, weight, oldPrice } = product
+import { useSelector, useDispatch } from 'react-redux'
+import { selectItems, addItem, removeItem } from '../../redux/slices/basketSlice'
+import { BsCartPlus, BsFillCartCheckFill } from "react-icons/bs"
 
+function ProductCard({ product }) {
+    const { id, name, image, price, weight, oldPrice } = product
+    const dispatch = useDispatch()
+    const cartItems = useSelector(selectItems)
 
     const OffCalc = () => {
         const off = ((oldPrice - price) / oldPrice) * 100
         return Math.round(off)
     }
+
+    // const checkexits = (id) => {
+    //     const find = cartItems.filter(item => item.id === id)
+    //     console.log(find)
+    //     return !!find.length
+    // }
+
+    // console.log(checkexits())
+
     return (
         <Link href="/products">
             <div className="product-card ml-4">

@@ -1,5 +1,6 @@
 export const DEALS = [
     {
+        id: 1,
         "name": "Vimto Squash Remix Apple",
         "weight": "454g",
         "price": 6.90,
@@ -10,6 +11,7 @@ export const DEALS = [
     },
 
     {
+        id: 2,
         "name": "Taylors of Harrogate Yorkshire Coffee",
         "weight": "200g",
         "price": 10.50,
@@ -19,6 +21,7 @@ export const DEALS = [
     },
 
     {
+        id: 3,
         "name": "Soft Mochi & Galeto Ice Cream",
         "weight": "200g",
         "price": 20.99,
@@ -28,6 +31,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_4a.jpg?resize=300%2C300&ssl=1"
     },
     {
+        id: 4,
         "name": "Naked Noodle Egg Noodles Singapore",
         "weight": "500g",
         "price": 8.05,
@@ -36,6 +40,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/05_11a.jpg?resize=300%2C300&ssl=1"
     },
     {
+        id: 5,
         "name": "Casillero Diablo Cabernet Sauvignon",
         "weight": "500ml",
         "price": 16.90,
@@ -45,6 +50,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/07_7b.jpg?fit=640%2C640&ssl=1"
     },
     {
+        id: 6,
         "name": "Saute Pan Silver",
         "weight": "500g",
         "price": 1.90,
@@ -53,6 +59,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/01/01_8a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 7,
         "name": "Bar S – Classic Bun Length Franks",
         "weight": "500g",
         "price": 35.00,
@@ -62,6 +69,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/02_1a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 8,
         "name": "Broccoli Crowns",
         "weight": "1.5kg",
         "price": 10.00,
@@ -70,6 +78,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/01/01_27a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 9,
         "name": "Slimming World Vegan Mac Greens",
         "weight": "500g",
         "price": 3.38,
@@ -80,6 +89,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/07_7b.jpg?fit=640%2C640&ssl=1"
     },
     {
+        id: 10,
         "name": "Saute Pan Silver",
         "weight": "500g",
         "price": 1.90,
@@ -88,6 +98,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/01/01_8a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 11,
         "name": "Bar S – Classic Bun Length Franks",
         "weight": "500g",
         "price": 35.00,
@@ -96,6 +107,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/02_1a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 12,
         "name": "Broccoli Crowns",
         "weight": "1.5kg",
         "price": 10.00,
@@ -105,6 +117,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/01/01_27a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 13,
         "name": "Slimming World Vegan Mac Greens",
         "weight": "500g",
         "price": 3.38,
@@ -114,6 +127,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/05_8a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 14,
         "name": "Häagen-Dazs Salted Caramel",
         "weight": "200g",
         "price": 11.57,
@@ -122,6 +136,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_3a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 15,
         "name": "Extreme Budweiser Light Can",
         "weight": "500ml",
         "price": 32.00,
@@ -130,6 +145,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2019/12/07_2a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 16,
         "name": "Naked Noodle Egg Noodles Singapore",
         "weight": "500g",
         "price": 2.00,
@@ -138,6 +154,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/05_11a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 17,
         "name": "Iceland Macaroni Cheese Traybake",
         "weight": "500g",
         "price": 4.25,
@@ -146,6 +163,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_3a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 18,
         "name": "Dolmio Bolognese Pasta Sauce",
         "weight": "500ml",
         "price": 3.90,
@@ -154,6 +172,7 @@ export const DEALS = [
         "image": "https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/08_1a.jpg?resize=768%2C768&ssl=1"
     },
     {
+        id: 19,
         "name": "Sitema BakeIT Plastic Box",
         "weight": "1.5kg",
         "price": 3.50,
