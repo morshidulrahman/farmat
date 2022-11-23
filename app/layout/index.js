@@ -33,8 +33,6 @@ function Layout({ children }) {
     }, [])
 
     useEffect(() => {
-        if (!cartItems.length) return
-
         // save the cart items to localstorage
 
         const items = JSON.stringify(cartItems)
