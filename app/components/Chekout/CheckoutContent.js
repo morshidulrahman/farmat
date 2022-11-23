@@ -4,9 +4,11 @@ import YourOrder from "./YourOrder"
 import AppForm from "../shared/from/AppForm"
 import * as Yup from "yup"
 import Checkoutlayout from '../../layout/Checkoutlayout'
-import { db } from '../../configs/firebase'
+import { db, timestamp } from '../../configs/firebase'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../redux/slices/authSlice'
+import { UID } from '../../utils/helper'
+import { selectItems, selectTotalCartItems } from '../../redux/slices/basketSlice'
 
 const validationSchema = Yup.object().shape({
     first_name: Yup.string().max(25).required().label('First Name'),
@@ -22,12 +24,17 @@ const validationSchema = Yup.object().shape({
     notes: Yup.string().max(400).required().label('Notes'),
 })
 function CheckoutContent() {
+    const uid = UID()
     const user = useSelector(selectUser)
+    const items = useSelector(selectItems)
+    const carttotal = useSelector(selectTotalCartItems)
+
     const [loading, setloading] = useState(false)
 
     const placeholder = async (values) => {
         setloading(true)
         await savingfromdata(values)
+        await saveplaceorder(values)
         setloading(false)
     }
 
@@ -39,21 +46,33 @@ function CheckoutContent() {
 
     }
 
+    const saveplaceorder = async (values) => {
+        const orders = {
+            uid,
+            ...user,
+            items: items,
+            total: carttotal,
+            created_at: timestamp,
+            values: values
+        }
+        await db.collection("orders").doc(uid).set(orders)
+    }
+
     return (
         <Checkoutlayout>
             <div className='flex flex-wrap md:flex-nowrap gap-5'>
                 <AppForm
                     initialValues={{
-                        first_name: '',
-                        last_name: '',
-                        company: '',
-                        address: '',
-                        email: '',
-                        phone: '',
-                        city: '',
-                        state: '',
-                        zip: '',
-                        country: '',
+                        first_name: user?.billings_info.first_name || '',
+                        last_name: user?.billings_info.last_name || '',
+                        company: user?.billings_info.company || '',
+                        address: user?.billings_info.address || '',
+                        email: user?.billings_info.email || '',
+                        phone: user?.billings_info.phone || '',
+                        city: user?.billings_info.city || '',
+                        state: user?.billings_info.state || '',
+                        zip: user?.billings_info.zip || '',
+                        country: user?.billings_info.country || '',
                         notes: ''
                     }}
                     validationSchema={validationSchema}
