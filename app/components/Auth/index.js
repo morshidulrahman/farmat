@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { AppForm, FormInput, FormBtn } from "../shared/from"
 import * as Yup from "yup"
 import firebase from "firebase"
-import { auth } from '../../configs/firebase'
+import { auth, db } from '../../configs/firebase'
 
 const validationSchema = Yup.object().shape({
     email: Yup.string().email().required().label("email address"),
@@ -20,10 +20,16 @@ const index = () => {
     const loginWithGoogle = () => {
         const provider = new firebase.auth.GoogleAuthProvider()
         auth.signInWithPopup(provider)
+            .then(userCredential => {
+                addtouserdatabase(userCredential.user)
+            })
     }
 
     const singUp = (email, password) => {
         auth.createUserWithEmailAndPassword(email, password)
+            .then(userCredential => {
+                addtouserdatabase(userCredential.user)
+            })
             .catch((error) => {
                 alert(error.message)
                 console.log(error.message)
@@ -36,6 +42,20 @@ const index = () => {
                 alert(error.message)
                 console.log(error.message)
             })
+    }
+
+    const addtouserdatabase = async (user) => {
+        const { uid, displayName, photoURL, email } = user
+        const userref = await db.collection('users').doc(uid).get()
+        if (!userref.exists) {
+            db.collection("users").doc(uid).set({
+                uid,
+                name: displayName,
+                email,
+                image: photoURL
+            })
+        }
+
     }
 
     return (
