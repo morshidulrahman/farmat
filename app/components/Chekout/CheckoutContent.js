@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux'
 import { selectUser } from '../../redux/slices/authSlice'
 import { UID } from '../../utils/helper'
 import { selectItems, selectTotalCartItems } from '../../redux/slices/basketSlice'
+import { useRouter } from 'next/router'
 
 const validationSchema = Yup.object().shape({
     first_name: Yup.string().max(25).required().label('First Name'),
@@ -24,7 +25,7 @@ const validationSchema = Yup.object().shape({
     notes: Yup.string().max(400).required().label('Notes'),
 })
 function CheckoutContent() {
-    const uid = UID()
+    const router = useRouter()
     const user = useSelector(selectUser)
     const items = useSelector(selectItems)
     const carttotal = useSelector(selectTotalCartItems)
@@ -32,9 +33,11 @@ function CheckoutContent() {
     const [loading, setloading] = useState(false)
 
     const placeholder = async (values) => {
+        const order_id = UID()
         setloading(true)
         await savingfromdata(values)
-        await saveplaceorder(values)
+        await saveplaceorder(values, order_id)
+        router.push("/success?order_id=" + order_id)
         setloading(false)
     }
 
@@ -46,16 +49,16 @@ function CheckoutContent() {
 
     }
 
-    const saveplaceorder = async (values) => {
+    const saveplaceorder = async (values, order_id) => {
         const orders = {
-            uid,
+            order_id,
             ...user,
             items: items,
             total: carttotal,
             created_at: timestamp,
             values: values
         }
-        await db.collection("orders").doc(uid).set(orders)
+        await db.collection("orders").doc(order_id).set(orders)
     }
 
     return (
