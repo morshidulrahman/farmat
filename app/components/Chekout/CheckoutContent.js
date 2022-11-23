@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Bilinginfo from "./Bilinginfo"
 import YourOrder from "./YourOrder"
 import AppForm from "../shared/from/AppForm"
 import * as Yup from "yup"
 import Checkoutlayout from '../../layout/Checkoutlayout'
+import { db } from '../../configs/firebase'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../redux/slices/authSlice'
+
 const validationSchema = Yup.object().shape({
     first_name: Yup.string().max(25).required().label('First Name'),
     last_name: Yup.string().max(25).required().label('Last Name'),
@@ -18,9 +22,23 @@ const validationSchema = Yup.object().shape({
     notes: Yup.string().max(400).required().label('Notes'),
 })
 function CheckoutContent() {
-    const placeholder = (values) => {
-        console.log(values)
+    const user = useSelector(selectUser)
+    const [loading, setloading] = useState(false)
+
+    const placeholder = async (values) => {
+        setloading(true)
+        await savingfromdata(values)
+        setloading(false)
     }
+
+    const savingfromdata = async (values) => {
+
+        return db.collection("users").doc(user?.uid).set({
+            billings_info: values,
+        }, { merge: true })
+
+    }
+
     return (
         <Checkoutlayout>
             <div className='flex flex-wrap md:flex-nowrap gap-5'>
@@ -46,7 +64,7 @@ function CheckoutContent() {
                         <Bilinginfo />
                     </div>
                     <div className='w-full md:w-[40%]'>
-                        <YourOrder placeholder={placeholder} />
+                        <YourOrder placeholder={placeholder} loading={loading} />
                     </div>
                 </AppForm>
 
