@@ -3,7 +3,7 @@ import Bilinginfo from "./Bilinginfo"
 import YourOrder from "./YourOrder"
 import AppForm from "../shared/from/AppForm"
 import * as Yup from "yup"
-
+import Checkoutlayout from '../../layout/Checkoutlayout'
 const validationSchema = Yup.object().shape({
     first_name: Yup.string().max(25).required().label('First Name'),
     last_name: Yup.string().max(25).required().label('Last Name'),
@@ -22,34 +22,36 @@ function CheckoutContent() {
         console.log(values)
     }
     return (
-        <div className='flex flex-wrap md:flex-nowrap gap-5'>
-            <AppForm
-                initialValues={{
-                    first_name: '',
-                    last_name: '',
-                    company: '',
-                    address: '',
-                    email: '',
-                    phone: '',
-                    city: '',
-                    state: '',
-                    zip: '',
-                    country: '',
-                    notes: ''
-                }}
-                validationSchema={validationSchema}
-                onSubmit={placeholder}
-            >
-                <div className='w-full md:w-[60%]'>
-                    <h3 className="text-2xl mb-4">Billing details</h3>
-                    <Bilinginfo />
-                </div>
-                <div className='w-full md:w-[40%]'>
-                    <YourOrder placeholder={placeholder} />
-                </div>
-            </AppForm>
+        <Checkoutlayout>
+            <div className='flex flex-wrap md:flex-nowrap gap-5'>
+                <AppForm
+                    initialValues={{
+                        first_name: '',
+                        last_name: '',
+                        company: '',
+                        address: '',
+                        email: '',
+                        phone: '',
+                        city: '',
+                        state: '',
+                        zip: '',
+                        country: '',
+                        notes: ''
+                    }}
+                    validationSchema={validationSchema}
+                    onSubmit={placeholder}
+                >
+                    <div className='w-full md:w-[60%]'>
+                        <h3 className="text-2xl mb-4">Billing details</h3>
+                        <Bilinginfo />
+                    </div>
+                    <div className='w-full md:w-[40%]'>
+                        <YourOrder placeholder={placeholder} />
+                    </div>
+                </AppForm>
 
-        </div>
+            </div>
+        </Checkoutlayout>
     )
 }
 
