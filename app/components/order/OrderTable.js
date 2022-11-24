@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
-import { selectItems } from '../../redux/slices/basketSlice'
 import CartTableMobile from './OrderTableMobile'
 import CartTableRow from './OrderTableRow'
 import { LoadingOverlay } from '@mantine/core';
 import { db } from '../../configs/firebase'
 
 function CartTable() {
-    const cartitems = useSelector(selectItems)
     const [orders, setOrders] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -33,10 +30,11 @@ function CartTable() {
             .finally(() => setLoading(false))
     }, [])
 
-    console.log(orders)
+
 
     return (
         <>
+            <LoadingOverlay visible={loading} />
             <table className='w-full hidden md:table'>
                 <thead className='bg-gray-100 border'>
                     <tr className='text-left'>
