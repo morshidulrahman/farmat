@@ -1,26 +1,39 @@
 import React from 'react'
 import { MdDelete } from 'react-icons/md'
 import Quantity from '../shared/Quantity'
+import { useDispatch } from 'react-redux'
+import { increaseItemQuantity, decreaseItemQuantity, removeItem } from '../../redux/slices/basketSlice'
+function CartTableMobile({ id, name, image, price, quantity }) {
+    const dispatch = useDispatch()
 
-function CartTableMobile() {
+    const increaseQuantity = () => {
+        dispatch(increaseItemQuantity(id))
+    }
+    const decreaseQuantity = () => {
+        dispatch(decreaseItemQuantity(id))
+    }
+
     return (
         <div className='mt-5 md:hidden flex border-b mb-2 pb-4'>
             <div>
-                <img src="https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/04_4a.jpg?w=800&ssl=1" alt="" className="w-20 h-20 object-cover rounded-md" />
+                <img src={image} alt="" className="w-20 h-20 object-cover rounded-md" />
             </div>
             <div className="flex-grow space-y-1">
                 <h1 className="text-lg font-bold text-title">
-                    Soft Mochi & Galeto Ice Cream</h1>
+                    {name}</h1>
                 <p className="text-sm text-gray-500">Color: Black</p>
                 <p className="text-sm text-gray-500">Size: M</p>
-                <p className="text-sm text-gray-500">Price: <span className="text-primary font-semibold">$100</span></p>
+                <p className="text-sm text-gray-500">Price: <span className="text-primary font-semibold">${price}</span></p>
                 <div className="py-2 w-fit">
-                    <Quantity />
+                    <Quantity
+                        quantity={quantity}
+                        decreaseQuantity={decreaseQuantity}
+                        increaseQuantity={increaseQuantity} />
                 </div>
-                <p className="text-sm text-gray-500">Price: <span className="text-green font-semibold">$100</span></p>
+                <p className="text-sm text-gray-500">Total Price: <span className="text-green font-semibold">${(price * quantity).toFixed(2)}</span></p>
             </div>
             <div className="mt-2">
-                <MdDelete className="text-2xl cursor-pointer" />
+                <MdDelete className="text-2xl cursor-pointer" onClick={() => dispatch(removeItem(id))} />
             </div>
         </div>
     )

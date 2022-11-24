@@ -66,16 +66,16 @@ function CheckoutContent() {
             <div className='flex flex-wrap md:flex-nowrap gap-5'>
                 <AppForm
                     initialValues={{
-                        first_name: user?.billings_info.first_name || '',
-                        last_name: user?.billings_info.last_name || '',
-                        company: user?.billings_info.company || '',
-                        address: user?.billings_info.address || '',
-                        email: user?.billings_info.email || '',
-                        phone: user?.billings_info.phone || '',
-                        city: user?.billings_info.city || '',
-                        state: user?.billings_info.state || '',
-                        zip: user?.billings_info.zip || '',
-                        country: user?.billings_info.country || '',
+                        first_name: user?.billings_info?.first_name || '',
+                        last_name: user?.billings_info?.last_name || '',
+                        company: user?.billings_info?.company || '',
+                        address: user?.billings_info?.address || '',
+                        email: user?.billings_info?.email || '',
+                        phone: user?.billings_info?.phone || '',
+                        city: user?.billings_info?.city || '',
+                        state: user?.billings_info?.state || '',
+                        zip: user?.billings_info?.zip || '',
+                        country: user?.billings_info?.country || '',
                         notes: ''
                     }}
                     validationSchema={validationSchema}
