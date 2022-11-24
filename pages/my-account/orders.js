@@ -1,9 +1,11 @@
 import React from 'react'
 import Dashboarlayout from '../../app/layout/Dashboarlayout'
-
+import DashboardOrder from '../../app/components/order'
 const Orders = () => {
     return (
-        <Dashboarlayout>Orders</Dashboarlayout>
+        <Dashboarlayout>
+            <DashboardOrder />
+        </Dashboarlayout>
     )
 }
 

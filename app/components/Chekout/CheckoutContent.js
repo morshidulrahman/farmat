@@ -53,6 +53,7 @@ function CheckoutContent() {
         const orders = {
             order_id,
             ...user,
+            payment_success: true,
             items: items,
             total: carttotal,
             created_at: timestamp,
