@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectItems, addItem, removeItem } from '../../redux/slices/basketSlice'
 import { BsCartPlus, BsFillCartCheckFill } from "react-icons/bs"
-
+import { showNotification } from '@mantine/notifications';
 function ProductCard({ product }) {
     const { id, name, image, price, weight, oldPrice } = product
 
@@ -64,6 +64,7 @@ function ProductCard({ product }) {
                                 e.stopPropagation()
                                 e.preventDefault()
                                 removeItems(id)
+                                showNotification({ title: "Remove successfully", message: 'Cart remove successfully' })
                             }} className="bg-primary p-2 text-white rounded-full
                             ">
                                 <BsFillCartCheckFill size={17} />
@@ -73,6 +74,7 @@ function ProductCard({ product }) {
                                 e.stopPropagation()
                                 e.preventDefault()
                                 addtobasket(product)
+                                showNotification({ title: "Add successfully", message: 'Cart add successfully' })
                             }} className="bg-gray-600 text-white p-2 rounded-full
                             ">
                                 <BsCartPlus size={17} />

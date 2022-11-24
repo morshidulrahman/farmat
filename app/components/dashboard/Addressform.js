@@ -5,7 +5,7 @@ import { selectUser } from '../../redux/slices/authSlice'
 import { AppForm, FormBtn, FormDropdown, FormInput } from '../shared/from';
 import { showNotification } from '@mantine/notifications';
 import { db } from '../../configs/firebase';
-
+import { LoadingOverlay } from '@mantine/core';
 const COUNTRIES = [
     { title: "United States" }, { title: "United Kingdom" }, { title: "Canada" }, { title: "Australia" }, { title: "Bangladesh" }, { title: "France" }, { title: "Italy" }, { title: "Spain" }, { title: "Netherlands" }, { title: "Belgium" }, { title: "Austria" }, { title: "Switzerland" }, { title: "Sweden" }, { title: "Norway" }, { title: "Denmark" }, { title: "Finland" }, { title: "Ireland" }, { title: "New Zealand" }, { title: "Japan" }, { title: "China" }, { title: "Hong Kong" }, { title: "Singapore" }, { title: "India" }, { title: "Brazil" }, { title: "Mexico" }, { title: "Argentina" }, { title: "Chile" }, { title: "Colombia" }, { title: "Peru" }, { title: "Venezuela" }, { title: "South Africa" }, { title: "Egypt" }, { title: "Western" }
 ]
@@ -46,6 +46,7 @@ const AddressForm = () => {
 
     return (
         <div>
+            <LoadingOverlay visible={loading} />
             <h1 className="text-center text-3xl mb-5 font-bold">Update Billing Address</h1>
             <AppForm
                 initialValues={{
