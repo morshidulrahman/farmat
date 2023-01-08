@@ -1,5 +1,5 @@
 import React from 'react'
-import setBackgroundImage from '../../utils/helper'
+import { setBackgroundImage } from '../../utils/helper'
 function Homeposter() {
     return (
         <section className='py-8'>

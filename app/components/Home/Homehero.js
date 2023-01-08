@@ -1,5 +1,5 @@
 import React from 'react'
-import setBackgroundImage from '../../utils/helper'
+import { setBackgroundImage } from '../../utils/helper'
 function Homehero() {
     return (
         <section className='py-10 ' style={setBackgroundImage('/images/hero-bg.jpg')}>

@@ -2,7 +2,7 @@ import React from 'react'
 import SectionHeading from '../shared/SectionHeading'
 import { HEALTHY } from '../data/product'
 import Blogcard from './Blogcard'
-import setBackgroundImage from '../../utils/helper'
+import { setBackgroundImage } from '../../utils/helper'
 function Healthydaly() {
     return (
         <section className='py-16'>

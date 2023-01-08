@@ -6,8 +6,10 @@ import TodaysDeal from '../app/components/Home/TodaysDeal'
 import Homeposter from '../app/components/Home/Homeposter'
 import EssentialProduct from '../app/components/Home/Essentialproduct'
 import Healthydaly from '../app/components/Home/Healthydaly'
-import setBackgroundImage from '../app/utils/helper'
-function index() {
+import { setBackgroundImage, getPage, getPageServer } from '../app/utils/helper'
+import Admin from '../app/admin'
+function index({ page }) {
+  if (page === 'admin') return <Admin />
   return (
     <>
       <Homehero />
@@ -24,3 +26,18 @@ function index() {
 }
 
 export default index
+
+export async function getServerSideProps(context) {
+  let page
+  const { req } = context;
+  if (req) {
+    let host = req.headers.host
+    page = getPageServer(host) || null
+  }
+
+  return {
+    props: {
+      page: page
+    },
+  }
+}
