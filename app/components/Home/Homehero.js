@@ -21,7 +21,7 @@ function Homehero() {
                 {/* hero right */}
 
                 <div className='flex flex-col justify-between w-full md:w-1/3 rounded-lg '
-                    style={setBackgroundImage('/images/hero-right.jpg', { backgroundPosition: 'bottom right', backgroundColor: '#F8BF4E;', backgroundSize: 'unset' })}>
+                    style={setBackgroundImage('/images/hero-right.jpg', { backgroundPosition: 'bottom right', backgroundColor: '#F8BF4E', backgroundSize: 'unset' })}>
                     <div className='md:py-16 md:px-12 py-10 px-6'>
                         <h1 className='text-3xl font-bold leading-10 mb-8'>
                             20% SALE OFF
