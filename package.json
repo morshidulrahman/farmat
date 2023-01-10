@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "build": "yarn build",
     "start": "next start",
-    "lint": "next lint",
-    "build": "babel src -d lib",
-    "test": "jest"
+    "lint": "next lint"
+     
   },
   "dependencies": {
     "@emotion/react": "^11.10.4",
