@@ -38,9 +38,7 @@ function Healthydaly() {
                 <span className="text-color text-base font-semibold md:mt-4 mt-3">
                   Available on both iOS & Android
                 </span>
-                <Image
-                  width={256}
-                  height={38}
+                <img
                   src="https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2021/05/app-while-img.png"
                   alt=""
                   loading="lazy"

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Breadcrumb from "../shared/Breadcrumb";
 import FooterCard from "../shared/footercard";
 import Quantity from "../shared/Quantity";
@@ -30,7 +29,7 @@ const ProductDetails = ({ price = 30.25, oldPrice }) => {
                 ⭐⭐⭐⭐⭐ (1 customer review)
               </span>
               <div className="my-3">
-                <span className="text-sm text-color mb-2 block">500gl</span>
+                <span className="text-sm text-color mb-2 block">500g</span>
                 <div className="flex items-center gap-1">
                   <span
                     className={`text-xl font-bold ${

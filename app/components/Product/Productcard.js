@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -45,7 +45,7 @@ function ProductCard({ product }) {
             {OffCalc()}% Off
           </span>
         )}
-        <Image src={image} width={190} height={190} objectFit="contain" />
+        <img src={image} />
         <div className="flex flex-col mt-1 w-full ">
           <h4 className="text-base font-bold capitalize">farmat</h4>
           <h3 className="truncate text-base font-bold mb-1 text-gray-700">

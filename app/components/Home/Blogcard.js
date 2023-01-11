@@ -1,10 +1,9 @@
-import Image from "next/image";
 import React from "react";
-Image;
+
 function Blogcard({ author, category, date, title, description, image }) {
   return (
     <div className="p-7 last:border-1 last:border-gray-100">
-      <Image
+      <img
         src={image}
         loading="lazy"
         width="450px"

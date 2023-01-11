@@ -6,7 +6,7 @@ import CartTable from "../app/components/cart/CartTable";
 import CartAction from "../app/components/cart/CartAction";
 import { useSelector } from "react-redux";
 import { selectItems } from "../app/redux/slices/basketSlice";
-
+import Image from "next/image";
 function Cart() {
   const cartItems = useSelector(selectItems);
   return (
@@ -25,12 +25,14 @@ function Cart() {
           <CartAction />
         </div>
       ) : (
-        <div className="mx-auto max-w-6xl mt-10">
-          <img
+        <div className=" max-w-6xl mt-10 flex flex-col items-center justify-center">
+          <Image
+            width={300}
+            height={200}
             src="/images/order/empty-cart.gif"
             loading="lazy"
             alt=""
-            className="mx-auto w-1/2 mt-5"
+            className="mt-5 mx-auto"
           />
           <div className="mt-10">
             <h1 className="text-lg font-bold  text-center capitalize mb-10">
