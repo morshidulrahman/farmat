@@ -23,11 +23,6 @@ const OFFERS = [
     title: "Fresh Meat Saugage. BUY 2 GET 1!",
     img: "/images/featured/homepage-new-brand-img-4.jpg",
   },
-  {
-    category: "Soda BRand",
-    title: "Soda Can Box 24 Pieces - 30% OFF",
-    img: "/images/featured/homepage-new-brand-img-1.webp",
-  },
 ];
 
 function FeatureBrands() {
