@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Breadcrumb from "../shared/Breadcrumb";
 import FooterCard from "../shared/footercard";
 import Quantity from "../shared/Quantity";
