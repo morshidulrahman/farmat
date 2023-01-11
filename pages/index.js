@@ -2,6 +2,7 @@ import React from "react";
 import {
   Essentialproduct,
   FeatureBrands,
+  Healthydaly,
   Homecategory,
   Homehero,
   Homeposter,
