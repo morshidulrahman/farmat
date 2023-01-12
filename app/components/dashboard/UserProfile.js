@@ -19,7 +19,13 @@ const UserProfile = () => {
       <LoadingOverlay visible={loading} />
       <h1 className="text-3xl text-bold">User Profile</h1>
       <div className="flex items-center gap-4 mt-5">
-        <img src={user?.image} loading="lazy" alt={user?.name} />
+        <Image
+          src={user?.image}
+          loading="lazy"
+          alt={user?.name}
+          width={100}
+          height={100}
+        />
         <div>
           <h2 className="text-3xl text-bold">{user?.name}</h2>
           <h3 className="text-lg text-semibold text-primary mt-1">
@@ -27,14 +33,15 @@ const UserProfile = () => {
           </h3>
         </div>
       </div>
-      <Link href="/my-account/orders">
-        <Button title="View orders" className="py-4 mt-5 text-white mr-5" />
+      <Link href="/my-account/orders" passHref>
+        <button className="py-4 mt-5 bg-primary mr-5 px-2 rounded-md text-white">
+          <p>View orders</p>
+        </button>
       </Link>
-      <Link href="/my-account/address">
-        <Button
-          title="Update billing information"
-          className="py-4 mt-5 text-white"
-        />
+      <Link href="/my-account/address" passHref>
+        <button className="py-4 mt-5 mr-5 bg-primary px-2 rounded-md text-white">
+          <p>Update billing information</p>
+        </button>
       </Link>
     </div>
   );

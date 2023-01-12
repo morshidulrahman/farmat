@@ -4,30 +4,34 @@ import { BsCart } from "react-icons/bs";
 import { TbAddressBook } from "react-icons/tb";
 
 export const DASHBOARD_NAV = [
-    {
-        title: "Dashboard",
-        href: '/my-account',
-        icon: <FiSliders />,
-    },
-    {
-        title: "User Profile",
-        href: '/my-account/edit-account',
-        icon: <BiUser />,
-    },
-    {
-        title: "Addresses",
-        href: '/my-account/address',
-        icon: <TbAddressBook />,
-    },
-    {
-        title: "Orders",
-        href: '/my-account/orders',
-        icon: <BsCart />,
-    },
-    // {
-    //     title: "Reviews",
-    //     href: '/my-account/reviews',
-    //     icon: <MdOutlineReviews />,
-    // },
+  {
+    title: "Dashboard",
+    href: "/my-account",
+    icon: <FiSliders />,
+    id: 1,
+  },
+  {
+    title: "User Profile",
+    href: "/my-account/edit-account",
+    icon: <BiUser />,
+    id: 2,
+  },
+  {
+    title: "Addresses",
+    href: "/my-account/address",
+    icon: <TbAddressBook />,
+    id: 3,
+  },
+  {
+    title: "Orders",
+    href: "/my-account/orders",
+    icon: <BsCart />,
+    id: 4,
+  },
+  // {
+  //     title: "Reviews",
+  //     href: '/my-account/reviews',
+  //     icon: <MdOutlineReviews />,
+  // },
 ];
-export default DASHBOARD_NAV
+export default DASHBOARD_NAV;
