@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
@@ -9,6 +9,7 @@ import {
 } from "../../redux/slices/basketSlice";
 import { BsCartPlus, BsFillCartCheckFill } from "react-icons/bs";
 import { showNotification } from "@mantine/notifications";
+import { useEffect } from "react";
 function ProductCard({ product }) {
   const { id, name, image, price, weight, oldPrice } = product;
 
@@ -38,7 +39,7 @@ function ProductCard({ product }) {
     dispatch(removeItem(id));
   };
   return (
-    <Link href="/products">
+    <Link href={`/products/${id}`}>
       <div className="product-card ml-4">
         {oldPrice && (
           <span className="bg-orange px-2  text-white text-sm z-10 absolute top-1 left-1 rounded-md">

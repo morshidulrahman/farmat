@@ -1,42 +1,51 @@
 import Breadcrumb from "../shared/Breadcrumb";
 import FooterCard from "../shared/footercard";
 import Quantity from "../shared/Quantity";
+import { useRouter } from "next/router";
+import { ESSENTIAL, DEALS } from "../data/product";
+import { useEffect, useState } from "react";
+const ProductDetails = ({ oldPrice }) => {
+  const router = useRouter();
+  const { id: id } = router.query;
+  const [filterproduct, setfilterproduct] = useState([]);
 
-const ProductDetails = ({ price = 30.25, oldPrice }) => {
-  return (
-    <div className="py-12 bg-[#F5F5F5]">
+  useEffect(() => {
+    setfilterproduct(ESSENTIAL.filter((item) => item.id == id));
+    setfilterproduct(DEALS.filter((item) => item.id == id));
+  }, [id]);
+
+  return filterproduct.map((item, index) => (
+    <div className="py-12 bg-[#F5F5F5]" key={index}>
       <div className="container">
         <div className="p-10 bg-white rounded-2xl">
           <div className="flex flex-wrap lg:flex-row flex-col lg:gap-0 gap-7">
             <div className="lg:w-2/5 w-full lg:border-r">
-              <img
-                src="https://i0.wp.com/demo4.drfuri.com/farmart2/wp-content/uploads/sites/11/2020/02/02_3a.jpg?fit=640%2C640&ssl=1"
-                alt=""
-                loading="lazy"
-              />
+              <img src={item.image} alt="" loading="lazy" />
             </div>
             <div className="lg:w-[37%] w-full lg:px-10 pl-0">
               <div className="text-color mb-5">
                 <Breadcrumb />
               </div>
               <h4 className="md:text-xl text-base font-bold mb-2 text-orange">
-                MartFury
+                {item.vendor}
               </h4>
               <h1 className="text-title md:text-3xl text-xl font-semibold mb-5">
-                Bar S - Classic Bun Length Franks
+                {item.name}
               </h1>
               <span className="text-color text-xs">
                 ⭐⭐⭐⭐⭐ (1 customer review)
               </span>
               <div className="my-3">
-                <span className="text-sm text-color mb-2 block">500g</span>
+                <span className="text-sm text-color mb-2 block">
+                  {item.weight}
+                </span>
                 <div className="flex items-center gap-1">
                   <span
                     className={`text-xl font-bold ${
                       oldPrice ? "text-orange" : "text-green"
                     }`}
                   >
-                    ${price}
+                    ${item.price}
                   </span>
                   {oldPrice && (
                     <span className="text-lg line-through text-gray-400">
@@ -112,7 +121,7 @@ const ProductDetails = ({ price = 30.25, oldPrice }) => {
         </div>
       </div>
     </div>
-  );
+  ));
 };
 
 export default ProductDetails;
